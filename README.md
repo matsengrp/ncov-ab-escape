@@ -1,6 +1,6 @@
 # NCoV-AB-Escape Project
 
-Welcome to the NCoV-AB-Escape project repository. This project focuses on analyzing the escape mechanisms of the novel coronavirus (NCoV) against antibody (AB) Responses. Here, you'll find notebooks containing our research, data analyses, and final results.
+Welcome to the ncov-ab-escape repository. This project focuses on analyzing the escape mechanisms of the novel coronavirus (NCoV) against antibody (AB) Responses. Here, you'll find notebooks containing our research, data analyses, and final results.
 
 ## Repository Structure
 
