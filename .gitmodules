@@ -1,0 +1,3 @@
+[submodule "ncov-dmsa"]
+	path = ncov-dmsa
+	url = https://github.com/matsengrp/ncov-dmsa.git
