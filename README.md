@@ -1,27 +1,21 @@
-# NCoV-AB-Escape Project
+# Evolutionary dynamics of the escape of SARS-CoV-2 from hundreds of antibodies
 
-Welcome to the ncov-ab-escape repository. This project focuses on analyzing the escape mechanisms of the novel coronavirus (NCoV) against antibody (AB) Responses. Here, you'll find notebooks containing our research, data analyses, and final results.
+A study by the Matsen lab that investigates the evolutionary dynamics of SARS-CoV-2 antibody escape from hundreds of antibodies.
 
-## Repository Structure
+As input, we use data from multiple sources, including:
+* Deep mutational scanning from [Cao et al.](https://doi.org/10.1038/s41586-022-05644-7), processed by the [Bloom lab's escape calculator](https://github.com/jbloomlab/SARS2-RBD-escape-calc).
+* Neutralization data from Cao et al. and Wang et al.
+* SARS-CoV-2 sequences obtained through Nextstrain.
 
-- **Root Directory**: Contains all the initial, original Jupyter notebooks that were used in the early stages of our analysis. These notebooks provide a foundational understanding or patterns as to how our methods for analyzing evolved.
+## Organization of this repository
 
-- **Complete Clustering Folder**: This directory holds the culmination of our research efforts—the final clustering results. Within this, you'll find detailed analyses and visualizations that highlight our key findings.
+* `data/`: a directory with input data
+* `notebooks/`: a directory with Jupyter notebooks, which contain most of the code to perform the analyses
+* `scripts/`: a directory with auxiliary scripts
+* `ncov-dmsa/`: a fork of the [Nextstrain ncov repository](https://github.com/nextstrain/ncov) that includes code to compute escape scores from DMS data and color the output Nextstrain trees based on those scores
+* `environment.yml`: encodes the conda environment that we used to run the notebooks in `notebooks/`
 
-- **Results**: Contains resultsing dataframes that are generated and used by the notebooks. 
+## Running the analysis
 
-### Key File
-
-- **CompleteClustering Notebook**: Located within the Complete Clustering folder, this Jupyter notebook contains the finalized results of our project. It is the most critical piece for understanding our conclusions regarding NCoV's antibody escape mechanisms.
-
-## Running the Notebooks
-
-To replicate our results, you might want to run the CompleteClustering notebook from start to finish. Please note that some of the code blocks within the notebooks are commented out. To ensure the notebook executes correctly and regenerates the datasets as intended, you'll need to:
-
-1. Uncomment all the commented code blocks as directed in the notebook.
-2. Run the notebook sequentially from top to bottom.
-
-This process will allow you to generate the datasets and results identical to our final findings.
-
-Side note: When running any notebook, run it from top to bottom, and if you run another notebook in parallel, youll need to re-run the notebook again to get the original results, as some results can be overwritten by another notebook.
-
+* Run the Nextstrain build
+* Then, in `notebooks/` run `compute_escape_scores.ipynb` followed by `analyze_escape_scores.ipynb`
