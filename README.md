@@ -1,6 +1,6 @@
 # Evolutionary dynamics of the escape of SARS-CoV-2 from hundreds of antibodies
 
-A study by the Matsen lab that investigates the evolutionary dynamics of SARS-CoV-2 antibody escape from hundreds of antibodies.
+A study by the Matsen lab that investigates the evolutionary dynamics of SARS-CoV-2 antibody escape.
 
 As input, we use data from multiple sources, including:
 * Deep mutational scanning from [Cao et al.](https://doi.org/10.1038/s41586-022-05644-7), processed by the [Bloom lab's escape calculator](https://github.com/jbloomlab/SARS2-RBD-escape-calc).
