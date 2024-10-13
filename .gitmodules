@@ -1,3 +1,6 @@
 [submodule "ncov-dmsa"]
 	path = ncov-dmsa
 	url = https://github.com/matsengrp/ncov-dmsa.git
+[submodule "convergent_RBD_evolution"]
+	path = convergent_RBD_evolution
+	url = https://github.com/jianfcpku/convergent_RBD_evolution.git
