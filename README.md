@@ -54,7 +54,9 @@ Key results files:
 ## Step #3: computing viral escape scores
 
 The notebook `notebooks/compute_escape_scores.ipynb` performs this step.
-It does so using the strategy described in the Results section of our paper.
+It does so using the site-level approach described in the Results section of our paper.
+
+The notebook `notebooks/compute_escape_scores_mut_level.ipynb` does this same thing, but using the mutation-level approach rather than the site-level approach.
 
 ## Step #4: estimating fitness effects of amino-acid mutations in nature
 
@@ -81,3 +83,5 @@ Key results files:
     * `kmeans_cluster`: the antibody's cluster from k-means clustering into 20 clusters before we manually consolidated these 20 cluster into 8 clusters
     * `log_IC50`: the $\log_{10} \text{IC}_{50}$ of the antibody against the D614G variant (data from Cao et al.)
     * `source`: the source of the antibody, indicating the exposure history of the host the antibody was isolated from (metadata from Cao et al.)
+
+The notebook `notebooks/analyze_escape_scores_mut_level.ipynb`, but using viral escape scores computed using the mutation-level approach.
