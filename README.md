@@ -71,7 +71,7 @@ Key results files:
 * The above pipeline generates a series of CSV files that report inferred fitness effects, generating one file per clade. We make these files available in the `results/aamut_fitness/` directory. In each file, each row reports data for a given amino-acid mutation, with the `delta_fitness` column giving the mutation's estimated fitness effect, and the `uncertainty` column giving the level of uncertainty corresponding to each estimate.
 
 ### Sliding-window fitness effects
-To estimate mutational fitness effects at the level of sliding windows, we used the computational pipeline from https://github.com/matsengrp/s2trajectory. We ran this pipeline as described in the repository's `README.md` file.
+To estimate mutational fitness effects at the level of sliding windows, we used the computational pipeline from https://github.com/matsengrp/s2trajectory (commit: `d445cfc20f50e46b8a6a6a0bac366d5706330c24`). We ran this pipeline as described in the repository's `README.md` file.
 
 Key results files:
 * `results/sliding_window_mut_fitness/actual_expected_counts.context_True.csv`: a file that reports the results of running the above pipeline. Each row gives data for a specific amino-acid mutation in a specific sliding window. Columns give data for that mutation:
@@ -80,6 +80,7 @@ Key results files:
     * `actual_count`: the mutation's actual count
     * `expected_count`: the mutation's expected count
 
+We used these counts to computed fitness effects using the notebook described in the next section.
 
 ## Step #5: analyzing escape scores
 
