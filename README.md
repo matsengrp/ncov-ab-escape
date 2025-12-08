@@ -60,7 +60,8 @@ The notebook `notebooks/compute_escape_scores_mut_level.ipynb` does this same th
 
 ## Step #4: estimating fitness effects of amino-acid mutations in nature
 
-We computed fitness effects using the computational pipeline from https://github.com/neherlab/SARS2-mut-fitness-v2 described in [Haddox et al.](https://doi.org/10.1101/2025.01.07.631013).
+### Clade-level fitness effects
+To estimate mutational fitness effects at the level of clades, we used the computational pipeline from https://github.com/neherlab/SARS2-mut-fitness-v2 described in [Haddox et al.](https://doi.org/10.1101/2025.01.07.631013).
 
 To do so, we cloned the above repository (commit: `65fcdd3c0252ca2c3caaad8e79b6af03d697d318`), replaced the default `config.yaml` file with a custom file (see `scripts/config.yaml`), and then ran the pipeline using the following snakemake command:
 
@@ -68,6 +69,17 @@ To do so, we cloned the above repository (commit: `65fcdd3c0252ca2c3caaad8e79b6a
 
 Key results files:
 * The above pipeline generates a series of CSV files that report inferred fitness effects, generating one file per clade. We make these files available in the `results/aamut_fitness/` directory. In each file, each row reports data for a given amino-acid mutation, with the `delta_fitness` column giving the mutation's estimated fitness effect, and the `uncertainty` column giving the level of uncertainty corresponding to each estimate.
+
+### Sliding-window fitness effects
+To estimate mutational fitness effects at the level of sliding windows, we used the computational pipeline from https://github.com/matsengrp/s2trajectory. We ran this pipeline as described in the repository's `README.md` file.
+
+Key results files:
+* `results/sliding_window_mut_fitness/actual_expected_counts.context_True.csv`: a file that reports the results of running the above pipeline. Each row gives data for a specific amino-acid mutation in a specific sliding window. Columns give data for that mutation:
+    * `window`: sliding-window start date
+    * `ID`: a string identifying the gene and amino-acid mutation. For instance, "S-A1015D" corresponds to the A1015D amino-acid mutation in the spike (S) gene. Because of file size limits, we only uploaded data for mutations to spike. But the pipeline generates data for all genes.
+    * `actual_count`: the mutation's actual count
+    * `expected_count`: the mutation's expected count
+
 
 ## Step #5: analyzing escape scores
 
